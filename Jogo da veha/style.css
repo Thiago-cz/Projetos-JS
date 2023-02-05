@@ -1,0 +1,142 @@
+body {
+    display: flex;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+.conteiner {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    position: relative;
+}
+
+.btn {
+    border: #000000 solid 2px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 150px;
+    height: 150px;
+}
+
+.btn:nth-child(1),
+.btn:nth-child(2),
+.btn:nth-child(3) {
+    border-top: none;
+}
+
+.btn:nth-child(7),
+.btn:nth-child(8),
+.btn:nth-child(9) {
+    border-bottom: none;
+}
+
+.btn:nth-child(1),
+.btn:nth-child(4),
+.btn:nth-child(7) {
+    border-left: none;
+}
+
+.btn:nth-child(3),
+.btn:nth-child(6),
+.btn:nth-child(9) {
+    border-right: none;
+}
+
+.btn.x::before,
+.btn.x::after,
+.conteiner.x .btn:not(.x):not(.o):hover::after,
+.conteiner.x .btn:not(.x):not(.o):hover::before {
+    content: "";
+    background-color: #444444;
+    width: 120px;
+    height: 15px;
+    position: absolute;
+    
+}
+
+.btn.x::before,
+.conteiner.x .btn:hover::before {
+    transform: rotate(45deg);
+}
+
+.btn.x::after,
+.conteiner.x .btn:hover::after {
+    transform: rotate(-45deg);
+}
+
+.btn.o::before,
+.conteiner.o .btn:not(.x):hover::before {
+    content: "";
+    width: 90px;
+    height: 90px;
+    border: #444444 solid 15px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 400ms;
+}
+
+.conteiner.x .btn:not(.x):not(.o):hover::after,
+.conteiner.x .btn:not(.x):not(.o):hover::before{
+    background-color: #999999;
+}
+.conteiner.o .btn:not(.x):not(.o):hover::before {
+    background-color: #ffffff;
+    border-color: #999999;
+}
+
+.btn.o,
+.btn.x {
+    cursor: not-allowed;
+}
+
+.endGame {
+    display: none;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,.6);
+    flex-direction: column;
+    
+}
+.endGame button {
+    font-size: 2rem;
+    border-radius: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: aliceblue;
+    background-color: #444444;
+    border: none;
+    padding: 5px 5px;
+}
+
+.endGame button:hover{
+    background-color: #aaaaaa;
+    color: #222222;
+    transition: .3s;
+
+}
+
+.endGame p {
+    font-size: 3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #ffffff;
+    
+}
+.showMsgEndGame {
+    display: flex;
+}
